@@ -1,27 +1,26 @@
 [server]
 host: 0.0.0.0
 port: 7125
-enable_debug_logging: False
+enable_debug_logging: True
 config_path: /home/pi/klipper_config
-log_path: /home/pi/klipper_logs
-database_path: ~/.moonraker_database
 klippy_uds_address: /tmp/klippy_uds
 
 [authorization]
+enabled: True
+api_key_file: ~/.moonraker_api_key
 trusted_clients:
     127.0.0.1
     192.168.0.0/16
     ::1/128
     FE80::/10
 cors_domains:
-    *.lan
-    *.local
-    *://my.mainsail.xyz
-    *://app.fluidd.xyz
-
-[octoprint_compat]
-
-[history]
+    http://*.local
+    http://my.mainsail.xyz
+    https://my.mainsail.xyz
+    http://app.fluidd.xyz
+    https://app.fluidd.xyz
+    http://192.168.86.124
+    http://192.168.86.124:*
 
 [update_manager]
 
